@@ -1,7 +1,9 @@
-package com.maldonadopublisher.model;
+package com.maldonadopublisher.springwebapp.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -9,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 
+@Entity
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -48,6 +51,11 @@ public class Book {
     
 
     public Book() {
+    }
+    public Book(String title, String isbn) {
+        this.title = title;
+        this.isbn = isbn;
+        this.authors = new HashSet<>();
     }
     public Book(String title, String isbn, Set<Author> authors) {
         this.title = title;

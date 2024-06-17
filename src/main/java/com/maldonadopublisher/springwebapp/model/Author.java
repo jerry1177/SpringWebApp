@@ -1,5 +1,6 @@
-package com.maldonadopublisher.model;
+package com.maldonadopublisher.springwebapp.model;
 
+import java.util.HashSet;
 import java.util.Set;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +21,11 @@ public class Author {
     private Set<Book> books;
     Author() {
 
+    }
+    public Author(String firtName, String lastName) {
+        this.firtName = firtName;
+        this.lastName = lastName;
+        this.books = new HashSet<>();
     }
     public Author(String firtName, String lastName, Set<Book> books) {
         this.firtName = firtName;
