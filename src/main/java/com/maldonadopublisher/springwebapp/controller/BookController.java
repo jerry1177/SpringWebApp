@@ -19,6 +19,6 @@ private final BookRepository bookRepository;
         
         model.addAttribute("books", bookRepository.findAll());
         
-        return "books";
+        return "books/list";
     }
 }
