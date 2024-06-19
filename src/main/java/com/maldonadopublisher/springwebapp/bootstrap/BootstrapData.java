@@ -26,7 +26,11 @@ private final PublisherRepository publisherRepository;
 
     @Override
     public void run(String... args) throws Exception {
-        // TODO Auto-generated method stub
+
+        Publisher pub = new Publisher("bupper", "3184 mel", "Los Angeles", "CA", "99999");
+        publisherRepository.save(pub);
+
+
         Author eric = new Author("Eric", "Evans");
         Book ddd = new Book("Domain Driven Design", "12343456789");
         eric.getBooks().add(ddd);
@@ -35,22 +39,26 @@ private final PublisherRepository publisherRepository;
         authorRepository.save(eric);
         bookRepository.save(ddd);
 
+        ddd.setPublisher(pub);
+        pub.getBooks().add(ddd);
+        publisherRepository.save(pub);
+
         Author rod = new Author("Rod", "Johnson");
         Book noEJB = new Book ("J2EE Development without EJB", "3637464736474");
         rod.getBooks().add(noEJB);
         noEJB.getAuthors().add(rod);
+        noEJB.setPublisher(pub);
+        pub.getBooks().add(noEJB);
+
 
         authorRepository.save(rod);
         bookRepository.save(noEJB);
-
+        publisherRepository.save(pub);
         System.out.println("Started in Bootstrap");
         System.out.println("Number of books: " + bookRepository.count());
 
-        Publisher pub = new Publisher("3184 mel", "Los Angeles", "CA", "99999");
-        publisherRepository.save(pub);
-
         System.out.println("Number of publisher: " + publisherRepository.count());
-
+        System.out.println("Publisher: "+ pub.getName() + "has " + pub.getBooks().size() + " books!");
     }
     
 }
