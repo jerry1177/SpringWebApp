@@ -1,4 +1,4 @@
-package com.maldonadopublisher.springwebapp.model;
+package com.maldonadopublisher.springwebapp.petclinicdata.model;
 
 public class PetType {
     private String name;
