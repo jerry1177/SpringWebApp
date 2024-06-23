@@ -1,4 +1,4 @@
-package com.maldonadopublisher.petclinicdata.model.services;
+package com.maldonadopublisher.petclinicdata.services;
 
 import java.util.Set;
 import com.maldonadopublisher.petclinicdata.model.Pet;
