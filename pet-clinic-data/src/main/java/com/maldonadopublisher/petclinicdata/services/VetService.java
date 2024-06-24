@@ -1,12 +1,9 @@
 package com.maldonadopublisher.petclinicdata.services;
 
-import java.util.Set;
-
 import com.maldonadopublisher.petclinicdata.model.Vet;
 
-public interface VetService {
-    Vet findById(Long id);
+public interface VetService extends CrudService<Vet, Long> {
+    
     Vet findByLastName(String lastName);
-    Vet save(Vet owner);
-    Set<Vet> findAll();
+    
 }
