@@ -1,4 +1,4 @@
-package com.maldonadopublisher;
+package com.maldonadopublisher.petclinicweb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
